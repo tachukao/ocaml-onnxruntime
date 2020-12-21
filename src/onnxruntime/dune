@@ -1,0 +1,25 @@
+(library
+ (name onnxruntime)
+ (public_name onnxruntime)
+ (libraries onnxruntime.stubs onnxruntime.stubs.types ctypes ctypes.foreign)
+ (foreign_stubs
+  (language c)
+  (names onnxruntime_stubs)
+  (flags
+   (:include c_flags.sexp)))
+ (c_library_flags
+  (:include c_library_flags.sexp)))
+
+(rule
+ (targets c_flags.sexp c_library_flags.sexp)
+ (deps
+  (:discover ../config/discover.exe))
+ (action
+  (run %{discover})))
+
+(rule
+ (targets onnxruntime_stubs.c onnxruntime_generated.ml)
+ (deps
+  (:gen ../gen/gen_stubs.exe))
+ (action
+  (run %{gen})))

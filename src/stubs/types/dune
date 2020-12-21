@@ -1,0 +1,4 @@
+(library
+ (name types)
+ (public_name onnxruntime.stubs.types)
+ (libraries ctypes.stubs ctypes))

@@ -1,0 +1,16 @@
+opam-version: "2.0"
+authors: [ "Ta-Chu Kao" ]
+license: "MIT"
+homepage: "https://github.com/tachukao/ocaml-onnxruntime"
+dev-repo: "git+https://github.com/tachukao/ocaml-onnxruntime.git"
+bug-reports: "https://github.com/tachukao/ocaml-onnxruntime/issues"
+build: [
+  ["dune" "build" "-p" name "-j" jobs]
+]
+depends: [
+  "ocaml" {>= "4.06.0"}
+  "dune" {>= "2.0.0"}
+  "ctypes"
+]
+synopsis: "OCaml bindings to ONNX Runtime"
+description: "OCaml bindings to ONNX Runtime"

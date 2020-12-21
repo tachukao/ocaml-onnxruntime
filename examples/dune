@@ -1,0 +1,9 @@
+(executable
+ (name candy)
+ (modules candy)
+ (libraries onnxruntime owl camlimages.all_formats cmdargs))
+
+(executable
+ (name symbolic)
+ (modules symbolic)
+ (libraries onnxruntime owl owl-symbolic))
